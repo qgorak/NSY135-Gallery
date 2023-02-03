@@ -1,0 +1,8 @@
+Users = (Id_User INT AUTO_INCREMENT, Firstname VARCHAR(50) , Lastname VARCHAR(50) , Email VARCHAR(255) , Phone_Number VARCHAR(50) , Password_Hash VARCHAR(255) );
+Gallery = (Id_Gallery INT AUTO_INCREMENT, Name VARCHAR(255) , Description TEXT, Created DATETIME, Updated VARCHAR(50) , #Id_User);
+Orders = (Id_Order INT AUTO_INCREMENT, Created DATETIME, Updated DATETIME, Status TINYINT, #Id_Gallery);
+Order_Shipping_Adress = (Id_Order_Shipping_Adress INT AUTO_INCREMENT, Country VARCHAR(255) , City VARCHAR(255) , Postal_Code VARCHAR(255) , Adress VARCHAR(255) , #Id_Order, #Id_User);
+Photo = (Id_Photo INT AUTO_INCREMENT, Path VARCHAR(255) , Created DATETIME, #Id_Gallery);
+Order_Element = (Id_Order_Element INT AUTO_INCREMENT, Quantity VARCHAR(50) , #Id_Order_Shipping_Adress, #Id_Photo);
+Contact = (#Id_User_2, #Id_User_1);
+Gallery_Shared_Contact = (#Id_Contact, #Id_Gallery);
