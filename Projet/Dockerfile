@@ -20,3 +20,5 @@ ENV WEBHOME="/var/www/html"
 # You can easily change PHP-FPM configurations
 # by using pre-defined Docker's environment variables.
 # Learn more: https://code.shin.company/php#customize-docker-image
+
+RUN composer install

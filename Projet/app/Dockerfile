@@ -17,7 +17,8 @@ RUN a2enmod rewrite \
 ## Install Composer
 RUN curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer
-
+  
+RUN composer install
 ###
 ## PHP Extensisons
 ###
@@ -74,5 +75,7 @@ RUN apt-get install --yes libicu-dev \
 #     && pecl install redis \
 #     && docker-php-ext-enable redis
 
-
+	
 WORKDIR /var/www
+
+

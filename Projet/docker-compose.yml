@@ -3,7 +3,7 @@ services:
   laminas-app:
     image: shinsenter/laminas:latest
     volumes:
-      - ./my-website:/var/www/html
+      - ./app:/app
       - ./ssl-certs:/etc/ssl/web
     environment:
       TZ: UTC
@@ -32,6 +32,7 @@ services:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
+
       
 volumes:
   dbdata:
